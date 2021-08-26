@@ -149,7 +149,7 @@ namespace DatabaseFirstLINQ
             var afton = _context.ShoppingCarts.Where(ur => ur.User.Email == "afton@gmail.com").Include(ur => ur.Product);
             foreach(var products in afton)
             {
-                Console.WriteLine($"{products.Product.Name}");
+                Console.WriteLine($"product name: {products.Product.Name} price: {products.Product.Price} quantity: {products.Quantity}");
             }
         }
 
