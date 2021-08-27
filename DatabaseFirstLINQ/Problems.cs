@@ -22,8 +22,8 @@ namespace DatabaseFirstLINQ
             //ProblemFive();
             //ProblemSix();
             //ProblemSeven();
-            ProblemEight();
-            //ProblemNine();
+            //ProblemEight();
+            ProblemNine();
             //ProblemTen();
             //ProblemEleven();
             //ProblemTwelve();
@@ -159,6 +159,11 @@ namespace DatabaseFirstLINQ
             // HINT: End of query will be: .Select(sc => sc.Product.Price).Sum();
             // Then print the total of the shopping cart to the console.
 
+            decimal oda = _context.ShoppingCarts.Where(ur => ur.User.Email == "oda@gmail.com").Include(ur => ur.Product).Select(ur => ur.Product.Price).Sum();
+
+
+            Console.WriteLine($"cart total: {oda}");
+            
         }
 
         private void ProblemTen()
